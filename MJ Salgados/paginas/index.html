@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MJ Salgados</title>
+        <link rel="stylesheet" href="../css/estilo.css">
+        <link rel="shortcut icon" href="../imgs/icons/web-logo.png" type="image/x-icon">
+        <style>
+            #inicio {
+                background-image: url(../imgs/bgs/coxinha-bg.avif);
+                background-size: cover;
+                background-repeat: no-repeat;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #FFF;
+            }
+            #inicio > * {
+                border: none;
+                margin-bottom: 2%;
+            }
+            #slogan, #segundo-slogan{
+                font-family: "Quicksand", sans-serif;
+                text-align: center;
+                margin-inline: 5% 5%;
+            }
+            #slogan {
+                font-size: 2vw;
+                font-weight: 400;
+            }
+            #segundo-slogan {
+                font-size: 1.5vw;
+            }
+            #button-cardapio {
+                background-color: rgba(255, 255, 255, 0.2);
+                border: 2px solid #FFF;
+                border-radius: 0.5rem;
+                box-sizing: border-box;
+                color: #ffffff;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: "Quicksand";
+                font-size: 1.5vw;
+                font-weight: 400;
+                line-height: 1;
+                padding: 1rem 1.6rem;
+                text-align: center;
+                transition: ease 0.2s;
+                user-select: none;
+                height: 3vw;
+                width: 15vw;
+                }
+
+            #button-cardapio:hover {
+                background-color: #c49d43;
+                color: #fff;
+                border: #c49d43;
+                transform:rotate(-5deg)
+                }
+            #inicio a {
+                text-decoration: none;
+            }
+            #logo-centro {
+                height: 10vw;
+                border-radius: 0.5%;
+                margin:10%;
+            }
+            @media (max-width: 1185px) {
+                #botao-cardapio {
+                    font-size: 3vw;
+                    width: 35vw;
+                    height: 7vw;
+                }
+                #logo-centro {
+                    height: 17vw;
+                }
+                #slogan {
+                font-size: 3.2vw;
+                font-weight: 400;
+                }
+                #segundo-slogan {
+                font-size: 2.8vw;
+                }
+                #button-cardapio {
+                    font-size: 2vw;
+                    height: 4vw;
+                    width: 18vw;
+                }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <header class="navegacao">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><img src="../imgs/icons/home.png" class="home-button"></a></li>
+                    <li><a href="cardapio.html">Cardapio</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contatos.html">Contatos</a></li>
+                </ul>
+            </nav>
+        </header>
+            <section id="inicio">
+                <figure style="margin-top: 5%;">
+                    <img id="logo-centro" src="../imgs/icons/logo-mj.png">
+                </figure>
+                <h2 id="slogan">O melhor delivery de Salgados de Santa Isabel</h2>
+                <p id="segundo-slogan">O melhor da sua festa está aqui</p>
+                <a href="cardapio.html"><button id="button-cardapio">Cardápio</button></a>
+            </section>
+        </section>
+        <footer>
+            <section class="rodape"></section>
+            <section class="rodape-conteudo">
+                <section>
+                    <h2>Contatos</h2>
+                    <ul class="rodape-items">
+                        <li>(11) 96903-9721</li>
+                        <li>&nbsp;mayaramaya62@gmail.com</a></li>
+                        <li>Rua Vereador Massao Tsutsui, 195 - Jardim Novo Éden</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Redes sociais</h2>
+                    <ul class="rodape-items">
+                        <li><a class="links-rodape" href="https://www.instagram.com/mjsalgadosdelivery/" target="_blank"><img src="../imgs/icons/instagram-logo.png">&#64;mjsalgadosdelivery</a></li>
+                        <li><a class="links-rodape" href="https://www.facebook.com/mjsalgadosdelivery/?locale=pt_BR&checkpoint_src=any" target="_blank"><img src="../imgs/icons/facebook-logo.png">&#64;mjsalgadosdelivery</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Informações</h2>
+                    <ul class="rodape-items">
+                        <li><a class="links-rodape" href="cardapio.html">Cardápio</a></li>
+                        <li><a class="links-rodape" href="sobre.html">Sobre</a></li>
+                    </ul>
+                </section>
+            </section>
+            <section class="rodape"></section>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=, initial-scale=1.0">
+        <title>MJ Salgados</title>
+        <link rel="stylesheet" href="../css/estilo.css">
+        <link rel="shortcut icon" href="../imgs/icons/web-logo.png" type="image/x-icon">
+        <script type="text/javascript" src="../js/popup.js"></script>
+        <style>
+            .combos {
+                grid-area: combos;
+            }
+            .produtos {
+                display: grid;
+                grid-template-areas: 
+                'salgados churros'
+                'combos combos';
+            }
+            .produto-total-area {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .cabecalho-produto {
+                height: 7vw;
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #FFF;
+                font-size: 2vw;
+            }
+            .produtos-area {
+                display: flex;
+                width: 35vw;
+                background-color: #FFF;
+                border-radius: 2em;
+                box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.137);
+                margin-bottom: 2%;
+                margin-top: 5%;
+                padding: 2%;
+                text-align: justify;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: 0.3s;
+
+                * {
+                    margin-top: 5%;
+                    margin-bottom: 5%;
+                }
+
+                .produto-imagem {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0;
+                    img {
+                        width: 100%;
+                        border-radius: 1vw;
+                    }
+                }
+                .produto-texto {
+                    font-size: 110%;
+                    margin-right: 2%;
+                }
+                .produto-preco {
+                    font-size: 2vw;
+                    color: #3f3f3f;
+                }
+            }
+            .produtos-area:hover{
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+            #produto-total-area-combos {
+                display: grid;
+                grid-template-areas: 
+                'combo-primeiro combo-segundo'
+                'combo-terceiro combo-quarto'
+                'combo-quinto combo-sexto';
+                justify-items: center;
+            }
+            .produtos-nome {
+                font-size: 2em;
+            }
+
+            @media only screen and (max-width: 1525px) {
+                .produtos-nome {
+                    font-size: 1.5em;
+                }
+                .produtos-area {
+                    text-align: start;
+                }
+            }
+            @media only screen and (max-width: 1336px) {
+                .produtos-nome {
+                    font-size: 2em;
+                }
+                .cabecalho-produto {
+                    font-size: 3vw;
+                    }
+                .produtos {
+                    grid-template-areas: 
+                    'salgados'
+                    'churros'
+                    'combos';
+                }
+                #produto-total-area-combos {
+                    grid-template-areas: 
+                    'combo-primeiro'
+                    'combo-segundo'
+                    'combo-terceiro'
+                    'combo-quarto'
+                    'combo-quinto'
+                    'combo-sexto';
+                }
+                .produtos-area {
+                    width: 65vw;
+                }
+            }
+            @media only screen and (max-width: 800px) {
+                .produtos-area {
+                    .produto-texto {
+                        font-size: 80%;
+                    }
+                    .produtos-nome {
+                    font-size: 1.4em;
+                    }
+                    .produto-preco {
+                        font-size: 2.5vw;
+                    }
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .produtos-area {
+                    .produto-texto {
+                        font-size: 70%;
+                    }
+                    .produtos-nome {
+                    font-size: 1.3em;
+                    }
+                    .produto-preco {
+                        font-size: 3vw;
+                    }
+                }
+            }
+            @media only screen and (max-width: 490px) {
+                .produtos-area {
+                    .produtos-nome {
+                    font-size: 1em;
+                    }
+                    .produto-preco {
+                        font-size: 3.3vw;
+                    }
+                    .produto-texto {
+                        font-size:60%;
+                    }
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="navegacao">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><img src="../imgs/icons/home.png" class="home-button"></a></li>
+                    <li><a href="cardapio.html">Cardapio</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contatos.html">Contatos</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="conteudo">
+            <section class="produtos">
+                <section style="grid-area:salgados">
+                    <header class="cabecalho-produto" style="background-image: url(../imgs/bgs/salgados.avif)">Salgados</header>
+                    <section class="produto-total-area">
+
+                        <!-- Área dos 25 Salgados -->
+                        <section class="produtos-area" id="salgados25">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">25 Salgados</h2>
+                                <p class="produto-texto">Apresentamos nossos irresistíveis 25 Mini Churros, cuidadosamente preparados para oferecer uma experiência culinária inigualável.</p>
+                                <span class="produto-preco">R$22,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/25-100-salgados.png" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+                        
+                        <!-- PopUp dos 25 Salgados -->
+                        <dialog class="popups-caixas" id="popup25salgados">
+                            <section class="outer-botao-fechar">
+                                <section class="inner-botao-fechar">
+                                  <label>Voltar</label>
+                                </section>
+                            </section>
+                            <figure class="popups-imagens">
+                                <img src="../imgs/products/25-100-salgados.png">
+                            </figure>
+                            <section class="popups-caixas-texto">
+                                <h2 class="popups-titulo">25 SALGADOS</h2>
+                                <p>Apresentamos nossos irresistíveis 25 Mini Churros, cuidadosamente preparados para oferecer uma experiência culinária inigualável. Cada churros é recheado com generosidade, proporcionando uma explosão de sabor a cada mordida. Acompanha um charmoso potinho com doce extra, permitindo a personalização do seu deleite. A perfeita combinação de crocância e doçura que irá encantar o seu paladar. Experimente nossos mini churros e transforme momentos simples em ocasiões especiais.</p>
+                            </section>
+                        </dialog>
+
+                        <!-- Área dos 50 Salgados -->
+                        <section class="produtos-area" id="salgados50">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">50 Salgados</h2>
+                                <p class="produto-texto">Apresentamos os '50 Mini Churros'. Cada mini churro vem generosamente recheado, proporcionando um sabor único que derrete na boca.</p>
+                                <span class="produto-preco">R$35,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/25-100-salgados.png" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+
+                         <!-- PopUp dos 50 Salgados -->
+                         <dialog class="popups-caixas" id="popup50salgados">
+                            <section class="outer-botao-fechar">
+                                <section class="inner-botao-fechar">
+                                  <label>Voltar</label>
+                                </section>
+                            </section>
+                            <figure class="popups-imagens">
+                                <img src="../imgs/products/25-100-salgados.png">
+                            </figure>
+                            <section class="popups-caixas-texto">
+                                <h2 class="popups-titulo">50 SALGADOS</h2>
+                                <p>Apresentamos a você nosso prato '50 Salgados', da categoria 'Salgados Fritos '. Cada item é cuidadosamente preparado em tamanho de festa, ideal para compartilhar com amigos e família. Este prato é acompanhado por uma generosa porção do nosso Molho Especial da Casa, um segredo guardado a sete chaves, que promete adicionar um toque único e irresistível à sua experiência gastronômica. Com uma combinação perfeita de sabor e textura, estes salgados são a escolha perfeita para qualquer ocasião. Experimente e se delicie!</p>
+                            </section>
+                        </dialog>
+
+                        <!-- Área dos 75 Salgados -->
+                        <section class="produtos-area" id="salgados75">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">75 Salgados</h2>
+                                <p class="produto-texto">Descubra a alegria de saborear nossos '75 Mini churros', com uma irresistível combinação de texturas e sabores em cada porção.</p>
+                                <span class="produto-preco">R$55,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/25-100-salgados.png" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+
+                        <!-- PopUp dos 75 Salgados -->
+                        <dialog class="popups-caixas" id="popup75salgados">
+                            <section class="outer-botao-fechar">
+                                <section class="inner-botao-fechar">
+                                  <label>Voltar</label>
+                                </section>
+                            </section>
+                            <figure class="popups-imagens">
+                                <img src="../imgs/products/25-100-salgados.png">
+                            </figure>
+                            <section class="popups-caixas-texto">
+                                <h2 class="popups-titulo">75 SALGADOS</h2>
+                                <p>Apresentamos o '75 Salgados', uma seleção criteriosa de salgados fritos, da categoria 'Salgados Fritos '. Estes salgados são de tamanho perfeito para festas, criando uma experiência gastronômica verdadeiramente festiva. São absolutamente deliciosos e cuidadosamente preparados para garantir o sabor autêntico e inconfundível que você adora. Além disso, este prato é acompanhado por dois exclusivos e requintados molhos da casa, cada um adicionando sua própria nota única de sabor. Com nossos '75 Salgados', cada mordida é uma celebração.</p>
+                            </section>
+                        </dialog>
+
+                        <!-- Área dos 100 Salgados -->
+                        <section class="produtos-area" id="salgados100">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">100 Salgados</h2>
+                                <p class="produto-texto">Saborosos e irresistíveis, nossos 100 mini churros são cuidadosamente preparados e recheados com um divino doce que desperta os sentidos.</p>
+                                <span class="produto-preco">R$68,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/25-100-salgados.png" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+                    </section>
+                </section>
+
+                <!-- PopUp dos 100 Salgados -->
+                <dialog class="popups-caixas" id="popup100salgados">
+                    <section class="outer-botao-fechar">
+                        <section class="inner-botao-fechar">
+                          <label>Voltar</label>
+                        </section>
+                    </section>
+                    <figure class="popups-imagens">
+                        <img src="../imgs/products/25-100-salgados.png">
+                    </figure>
+                    <section class="popups-caixas-texto">
+                        <h2 class="popups-titulo">100 SALGADOS</h2>
+                        <p>Apresentamos os nossos '100 Salgados', um banquete festivo da categoria 'Salgados Fritos '. Estes deliciosos salgados, de tamanho ideal para festas, são meticulosamente preparados pela nossa equipe de chefs profissionais e fritos à perfeição para garantir uma crocância irresistível em cada mordida. Cada pedido é graciosamente servido com dois dos nossos exclusivos molhos da casa, cuidadosamente criados para complementar e realçar o sabor dos salgados. Faça seu evento se destacar com esse prato impressionante que promete agradar a todos os seus convidados!</p>
+                    </section>
+                </dialog>
+
+                <!-- Área total dos churros -->
+                <section style="grid-area:churros">
+                    <header class="cabecalho-produto" style="background-image: url(../imgs/bgs/churros-bg.avif);background-repeat: no-repeat;">Mini Churros</header>
+                    <section class="produto-total-area">
+
+                        <!-- Área dos 25 Mini Churros -->
+                        <section class="produtos-area" id="churros25">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">25 Mini Churros</h2>
+                                <p class="produto-texto">Apresentamos nossos irresistíveis 25 Mini Churros, cuidadosamente preparados para oferecer uma experiência culinária inigualável.</p>
+                                <span class="produto-preco">R$22,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/25-mini-churros.png" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+
+                        <!-- PopUp dos 25 Mini Churros -->
+                        <dialog class="popups-caixas" id="popup25churros">
+                            <section class="outer-botao-fechar">
+                                <section class="inner-botao-fechar">
+                                <label>Voltar</label>
+                                </section>
+                            </section>
+                            <figure class="popups-imagens">
+                                <img src="../imgs/products/25-mini-churros.png">
+                            </figure>
+                            <section class="popups-caixas-texto">
+                                <h2 class="popups-titulo">25 MINI CHURROS</h2>
+                                <p>Apresentamos os nossos '100 Salgados', um banquete festivo da categoria 'Salgados Fritos '. Estes deliciosos salgados, de tamanho ideal para festas, são meticulosamente preparados pela nossa equipe de chefs profissionais e fritos à perfeição para garantir uma crocância irresistível em cada mordida. Cada pedido é graciosamente servido com dois dos nossos exclusivos molhos da casa, cuidadosamente criados para complementar e realçar o sabor dos salgados. Faça seu evento se destacar com esse prato impressionante que promete agradar a todos os seus convidados!</p>
+                            </section>
+                        </dialog>
+
+                        <!-- Área dos 50 Mini Churros -->
+                        <section class="produtos-area" id="churros50">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">50 Mini Churros</h2>
+                                <p class="produto-texto">Apresentamos os '50 Mini Churros'. Cada mini churro vem generosamente recheado, proporcionando um sabor único que derrete na boca.</p>
+                                <span class="produto-preco">R$35,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/25-mini-churros.png" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+
+                        <!-- PopUp dos 50 Mini Churros -->
+                        <dialog class="popups-caixas" id="popup50churros">
+                            <section class="outer-botao-fechar">
+                                <section class="inner-botao-fechar">
+                                <label>Voltar</label>
+                                </section>
+                            </section>
+                            <figure class="popups-imagens">
+                                <img src="../imgs/products/25-mini-churros.png">
+                            </figure>
+                            <section class="popups-caixas-texto">
+                                <h2 class="popups-titulo">50 MINI CHURROS</h2>
+                                <p>Apresentamos os nossos '100 Salgados', um banquete festivo da categoria 'Salgados Fritos '. Estes deliciosos salgados, de tamanho ideal para festas, são meticulosamente preparados pela nossa equipe de chefs profissionais e fritos à perfeição para garantir uma crocância irresistível em cada mordida. Cada pedido é graciosamente servido com dois dos nossos exclusivos molhos da casa, cuidadosamente criados para complementar e realçar o sabor dos salgados. Faça seu evento se destacar com esse prato impressionante que promete agradar a todos os seus convidados!</p>
+                            </section>
+                        </dialog>
+
+                        <!-- Área dos 75 Mini Churros -->
+                        <section class="produtos-area" id="churros75">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">75 Mini Churros</h2>
+                                <p class="produto-texto">Descubra a alegria de saborear nossos '75 Mini churros', com uma irresistível combinação de texturas e sabores em cada porção.</p>
+                                <span class="produto-preco">R$55,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/25-mini-churros.png" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+
+                        <!-- PopUp dos 75 Mini Churros -->
+                        <dialog class="popups-caixas" id="popup75churros">
+                            <section class="outer-botao-fechar">
+                                <section class="inner-botao-fechar">
+                                <label>Voltar</label>
+                                </section>
+                            </section>
+                            <figure class="popups-imagens">
+                                <img src="../imgs/products/25-mini-churros.png">
+                            </figure>
+                            <section class="popups-caixas-texto">
+                                <h2 class="popups-titulo">75 MINI CHURROS</h2>
+                                <p>Apresentamos os nossos '100 Salgados', um banquete festivo da categoria 'Salgados Fritos '. Estes deliciosos salgados, de tamanho ideal para festas, são meticulosamente preparados pela nossa equipe de chefs profissionais e fritos à perfeição para garantir uma crocância irresistível em cada mordida. Cada pedido é graciosamente servido com dois dos nossos exclusivos molhos da casa, cuidadosamente criados para complementar e realçar o sabor dos salgados. Faça seu evento se destacar com esse prato impressionante que promete agradar a todos os seus convidados!</p>
+                            </section>
+                        </dialog>
+
+                        <!-- Área dos 100 Mini Churros -->
+                        <section class="produtos-area" id="churros100">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">100 Mini Churros</h2>
+                                <p class="produto-texto">Saborosos e irresistíveis, nossos 100 mini churros são cuidadosamente preparados e recheados com um divino doce que desperta os sentidos.</p>
+                                <span class="produto-preco">R$68,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/25-mini-churros.png" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+
+                        <!-- PopUp dos 100 Mini Churros -->
+                        <dialog class="popups-caixas" id="popup100churros">
+                            <section class="outer-botao-fechar">
+                                <section class="inner-botao-fechar">
+                                <label>Voltar</label>
+                                </section>
+                            </section>
+                            <figure class="popups-imagens">
+                                <img src="../imgs/products/25-mini-churros.png">
+                            </figure>
+                            <section class="popups-caixas-texto">
+                                <h2 class="popups-titulo">100 MINI CHURROS</h2>
+                                <p>Apresentamos os nossos '100 Salgados', um banquete festivo da categoria 'Salgados Fritos '. Estes deliciosos salgados, de tamanho ideal para festas, são meticulosamente preparados pela nossa equipe de chefs profissionais e fritos à perfeição para garantir uma crocância irresistível em cada mordida. Cada pedido é graciosamente servido com dois dos nossos exclusivos molhos da casa, cuidadosamente criados para complementar e realçar o sabor dos salgados. Faça seu evento se destacar com esse prato impressionante que promete agradar a todos os seus convidados!</p>
+                            </section>
+                        </dialog>
+
+                    </section>
+                </section>
+                <section class="combos">
+                    <header class="cabecalho-produto" style="background-image: url(../imgs/bgs/risoles-bg.avif);">Combos</header>
+                    <section id="produto-total-area-combos">
+                        <section class="produtos-area" style="grid-area:combo-primeiro">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">Combo 1</h2>
+                                <p class="produto-texto">Nosso 'Combo 1' é composto por 25 salgados e 10 mini churros, feitos com cuidado e acompanhados de 1L de Guaraná Antarctica.</p>
+                                <span class="produto-preco">R$35,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/combos/combo1.avif" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+                        <section class="produtos-area" style="grid-area:combo-segundo">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">Combo 2</h2>
+                                <p class="produto-texto">Composto por 50 salgados variados, finamente preparados para agradar o seu paladar. Acompanha 20 mini churros e 1L de Guaraná Antarctica.</p>
+                                <span class="produto-preco">R$60,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/combos/combo2.avif" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+                        <section class="produtos-area" style="grid-area:combo-terceiro">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">Combo 3</h2>
+                                <p class="produto-texto">Composto por 100 salgados irresistíveis e acompanha 30 mini churros, crocantes por fora e macios por dentro. Para completar, uma Coca Cola 2L.</p>
+                                <span class="produto-preco">R$55,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/combos/combo3.avif" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+                        <section class="produtos-area" style="grid-area:combo-quarto">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">Combo 4</h2>
+                                <p class="produto-texto">Este combo é uma combinação perfeita de 25 salgados cuidadosamente preparados.  Acompanha um refrescante Guaraná Antarctica de 1L.</p>
+                                <span class="produto-preco">R$30,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/combos/combo4.avif" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+                        <section class="produtos-area" style="grid-area:combo-quinto">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">Combo 5</h2>
+                                <p class="produto-texto">Composto por 50 salgados irresistíveis, é perfeito para compartilhar com amigos ou família. Acompanha uma refrescante garrafa de Guaraná de 1 litro.</p>
+                                <span class="produto-preco">R$45,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/combos/combo5.avif" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+                        <section class="produtos-area" style="grid-area:combo-sexto">
+                            <section class="produto-descricao">
+                                <h2 class="produtos-nome">Combo 6</h2>
+                                <p class="produto-texto">Composto por uma generosa porção de 100 salgados, garantindo uma explosão de sabores a cada mordida. Além disso é acompanhado por uma Coca Cola 2L.</p>
+                                <span class="produto-preco">R$85,00</span>
+                            </section>
+                            <figure class="produto-imagem">
+                                <img src="../imgs/products/combos/combo6.avif" alt="salgado" class="imgproduto">
+                            </figure>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <footer>
+            <section class="rodape"></section>
+            <section class="rodape-conteudo">
+                <section>
+                    <h2>Contatos</h2>
+                    <ul class="rodape-items">
+                        <li>(11) 96903-9721</li>
+                        <li>&nbsp;mayaramaya62@gmail.com</a></li>
+                        <li>Rua Vereador Massao Tsutsui, 195 - Jardim Novo Éden</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Redes sociais</h2>
+                    <ul class="rodape-items">
+                        <li><a class="links-rodape" href="https://www.instagram.com/mjsalgadosdelivery/" target="_blank"><img src="../imgs/icons/instagram-logo.png">&#64;mjsalgadosdelivery</a></li>
+                        <li><a class="links-rodape" href="https://www.facebook.com/mjsalgadosdelivery/?locale=pt_BR&checkpoint_src=any" target="_blank"><img src="../imgs/icons/facebook-logo.png">&#64;mjsalgadosdelivery</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Informações</h2>
+                    <ul class="rodape-items">
+                        <li><a class="links-rodape" href="cardapio.html">Cardápio</a></li>
+                        <li><a class="links-rodape" href="sobre.html">Sobre</a></li>
+                    </ul>
+                </section>
+            </section>
+            <section class="rodape"></section>
+        </footer>
+    </body>
+</html>
